@@ -27,9 +27,6 @@ cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.b
 # Creating new index
 echo -e "Hello World!" > /var/www/html/index.nginx-debian.html
 
-# Backup default
-sudo cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.bckp
-
 # Setting up /redirect_me to a youtube video
 string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/babaoni147 permanent;"
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
