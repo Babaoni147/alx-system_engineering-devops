@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
-# Ensure Nginx is installed
-if ! command -v nginx &> /dev/null; then
-    echo "Nginx is not installed. Installing Nginx..."
-    sudo apt-get update
-    sudo apt-get install -y nginx
-fi
-
+# debugging nginx port 80
 # Create a symbolic link for the default site configuration
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
 # Restart Nginx to apply the configuration
-sudo systemctl restart nginx
-
+sudo service nginx restart
 # Check Nginx status
-sudo systemctl status nginx
+sudo service nginx status 
