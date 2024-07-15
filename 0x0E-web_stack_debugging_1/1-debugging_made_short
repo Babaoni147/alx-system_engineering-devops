@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # debugging nginx port 80
-sudo sed -i 's/listen [::]:80 default_server;/listen [::]:80 default_server ipv6only=off;/' /etc/nginx/sites-available/default
+sudo sed -i 's/listen 80 default_server;/listen 80 default_server;/' /etc/nginx/sites-available/default
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo nginx && service nginx stop
+sudo service nginx restart
