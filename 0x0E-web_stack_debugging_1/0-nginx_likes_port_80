@@ -3,4 +3,4 @@
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo sed -i 's/listen [::]:80 default_server;/listen [::]:80 default_server ipv6only=off;/' /etc/nginx/sites-available/default
-service nginx restart
+sudo service nginx restart
