@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # debugging nginx port 80
-# Create a symbolic link for the default site configuration
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-# Restart Nginx to apply the configuration
 sudo service nginx restart
-# Check Nginx status
 sudo service nginx status 
