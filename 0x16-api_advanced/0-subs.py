@@ -17,7 +17,15 @@ def number_of_subscribers(subreddit):
         return 0
 
 
+def test_existing_subreddit(subreddit):
+    """Test function with an existing subreddit."""
+    subscribers = number_of_subscribers(subreddit)
+    if subscribers > 0:
+        print(f"Number of subscribers in r/{subreddit}: {subscribers}")
+    else:
+        print(f"Subreddit r/{subreddit} does not exist or has no subscribers.")
+
+
 if __name__ == "__main__":
     subreddit = input("Enter the subreddit name: ")
-    subscribers = number_of_subscribers(subreddit)
-    print(f"Number of subscribers in r/{subreddit}: {subscribers}")
+    test_existing_subreddit(subreddit)
